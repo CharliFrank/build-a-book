@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 
-MongoClient.connect(uri, (err, database) => {
+MongoClient.connect(`${uri}`, (err, database) => {
   if (err) {
     console.error(err, 'Error');
   } else {
