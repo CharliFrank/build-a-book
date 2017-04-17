@@ -33,5 +33,5 @@ MongoClient.connect(uri, (err, database) => {
 app.get('/', (req, res) => {
   console.log('Cash me outside! My get to / is working!');
   // res.render(`${__dirname}/Client/views/index.ejs`);
-  res.sendFile(`${__dirname}/index.js`);
+  res.sendFile(`${__dirname}/index.html`);
 });
