@@ -4,11 +4,21 @@ const bodyParser = require('body-parser');
 
 const MongoClient = require('mongodb').MongoClient;
 
+const uri = process.env.MONGOURI;
 const port = process.env.PORT || 3000;
 const app = express();
 let db;
 
-MongoClient.connect('mongodb://charlifrank:charlifrank1!@ds161950.mlab.com:61950/build-a-book-db', (err, database) => {
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.json());
+
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
+
+
+MongoClient.connect(`${uri}`, (err, database) => {
   if (err) {
     console.error(err, 'Error');
   } else {
@@ -21,5 +31,5 @@ MongoClient.connect('mongodb://charlifrank:charlifrank1!@ds161950.mlab.com:61950
 
 app.get('/', (req, res) => {
   console.log('Cash me outside! My get to / is working!');
-  res.sendFile(`${__dirname}/index.html`);
+  res.render(`${__dirname}/Client/views/index.ejs`);
 });
