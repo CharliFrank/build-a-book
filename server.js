@@ -36,3 +36,11 @@ MongoClient.connect('mongodb://' + user + ':' + password + '@ds161950.mlab.com:6
 app.get('/', (req, res) => {
   res.render(`${__dirname}/Client/views/index.ejs`);
 });
+
+app.get('/signup', (req, res) => {
+  res.render(`${__dirname}/Client/views/signup.ejs`);
+});
+
+app.get('/login', (req, res) => {
+  res.render(`${__dirname}/Client/views/login.ejs`);
+});
