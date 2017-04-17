@@ -18,11 +18,11 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-
 MongoClient.connect(`${uri}`, (err, database) => {
   if (err) {
     console.error(err, 'Error');
   } else {
+    console.log(typeof `${uri}`);
     db = database;
     app.listen(port, () => {
       console.log('Your server is working');
