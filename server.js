@@ -7,6 +7,8 @@ const MongoClient = require('mongodb').MongoClient;
 
 const uri = process.env.MONGO_URI;
 const port = process.env.PORT || 3000;
+const user = process.env.USER;
+const password = process.env.PASSWORD;
 const app = express();
 let db;
 
@@ -18,7 +20,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-MongoClient.connect(`${uri}`, (err, database) => {
+MongoClient.connect('mongodb://' + user + ':' + password + '@ds161950.mlab.com:61950/build-a-book-db', (err, database) => {
   if (err) {
     console.error(err, 'Error');
   } else {
