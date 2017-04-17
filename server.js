@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 
 const bodyParser = require('body-parser');
 
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = process.env.MONGOURI;
+const uri = process.env.MONGO_URI;
 const port = process.env.PORT || 3000;
 const app = express();
 let db;
