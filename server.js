@@ -34,7 +34,5 @@ MongoClient.connect('mongodb://' + user + ':' + password + '@ds161950.mlab.com:6
 });
 
 app.get('/', (req, res) => {
-  console.log('Cash me outside! My get to / is working!');
   res.render(`${__dirname}/Client/views/index.ejs`);
-  // res.sendFile(`${__dirname}/index.html`);
 });
