@@ -1,3 +1,7 @@
 <div id="container">
     {{ message }}
+    <div>
+      <input type='text' placeholder="Build Your Story Here" ng-model='narration.text' name="username" class="narration_input" />
+      <button class="narration_button" ng-click="savePage(narration.text)">Save My Page</button>
+    </div>
 </div>

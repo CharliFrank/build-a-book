@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
     <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>-->
@@ -18,9 +19,9 @@
       
        <div class="navigation" >
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-          <a href="/#/my_books" ng-click="goto('Client/my_books.ejs')">My Books</a> 
-          <a href="/#/build_a_book" ng-click="goto('Client/build_a_book.ejs')">Build A Book!</a> 
-          <a ng-click="signout()">Log Out</a> 
+          <a href="#/my_books" ng-click="my-books">My Books</a> 
+          <a href="#/build_a_book" ng-click="build-a-book">Build A Book!</a> 
+          <a href="/login" ng-click="logout">Log Out</a> 
         </md-nav-bar>
       </div>
 
