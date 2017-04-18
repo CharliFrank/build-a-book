@@ -1,0 +1,41 @@
+const app = angular.module('app', [
+  'app.build_a_book',
+  'app.my_books',
+  // 'ngAnimate',
+  'ngRoute',
+]);
+
+app.config(($routeProvider) => {
+  $routeProvider
+    .when('/signup', {
+      templateUrl: 'views/signup.ejs',
+      controller: 'MainAppController',
+    })
+    .when('/login', {
+      templateUrl: 'views/login.ejs',
+      controller: 'MainAppController',
+    })
+    .when('/my_books', {
+      templateUrl: 'views/my_books.ejs',
+      controller: 'MyBooksController',
+    })
+    .when('/build_a_book', {
+      templateUrl: 'views/build_a_book.ejs',
+      controller: 'BuildABookController',
+    })
+    .otherwise({
+      redirectTo: '/#/build_a_book',
+    });
+});
+
+app.controller('MainAppController', function ($scope) {
+  console.log('inside main app ctrl');
+  $scope.message = 'Your controller is working! mainAppController';
+})
+
+.factory('MyBooks', function ($http) {
+  console.log('inside MyBooks factory');
+});
+
+
+
