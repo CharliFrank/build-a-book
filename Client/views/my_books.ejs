@@ -1,3 +1,10 @@
 <div id="container">
     {{ message }}
+    <div class="navigation" >
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+          <a href="#/my_books" ng-click="my-books">My Books</a> 
+          <a href="#/build_a_book" ng-click="build-a-book">Build A Book!</a> 
+          <a href="#/login" ng-click="logout">Log Out</a> 
+        </md-nav-bar>
+      </div>
 </div>

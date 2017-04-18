@@ -1,7 +1,9 @@
 const app = angular.module('app', [
+  'app.services',
   'app.build_a_book',
   'app.my_books',
   // 'ngAnimate',
+  // 'textAngular',
   'ngRoute',
 ]);
 
@@ -26,15 +28,6 @@ app.config(($routeProvider) => {
     .otherwise({
       redirectTo: '/#/build_a_book',
     });
-});
-
-app.controller('MainAppController', function ($scope) {
-  console.log('inside main app ctrl');
-  $scope.message = 'Your controller is working! mainAppController';
-})
-
-.factory('MyBooks', function ($http) {
-  console.log('inside MyBooks factory');
 });
 
 

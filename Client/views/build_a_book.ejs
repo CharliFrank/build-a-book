@@ -1,7 +1,17 @@
 <div id="container">
     {{ message }}
-    <div>
+      <div class="navigation" >
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+          <a href="#/my_books" ng-click="my-books">My Books</a> 
+          <a href="#/build_a_book" ng-click="build-a-book">Build A Book!</a> 
+          <a href="#/login" ng-click="logout">Log Out</a> 
+        </md-nav-bar>
+      </div>
+    <div ng-show="showInput">
       <input type='text' placeholder="Build Your Story Here" ng-model='narration.text' name="username" class="narration_input" />
-      <button class="narration_button" ng-click="savePage(narration.text)">Save My Page</button>
+      <button class="narration_button" ng-click="savePage(narration.text)" >Save My Page</button>
     </div>
+
+    <a href="#" ng-click="showDetails = ! showDetails">Am I Hiding?</a>
+    <button ng-hide="showInput" ng-click="buttonClicked()">Save My Page</button>
 </div>
