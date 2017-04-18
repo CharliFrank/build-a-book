@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+    <title>Build A Book</title>
+  </head>
+  <body>
+      <nav>
+        <div>
+          <h2>Build A Book</h2>
+        </div>
+      </nav>
+      
+       <div class="navigation" >
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+          <a href="/#/my_books" ng-click="goto('Client/my_books.ejs')">My Books</a> 
+          <a href="/#/build_a_book" ng-click="goto('Client/build_a_book.ejs')">Build A Book!</a> 
+          <a ng-click="signout()">Log Out</a> 
+        </md-nav-bar>
+      </div>
+
+      <div>
+        hello world
+        <div ng-view>
+
+        </div>
+      </div>
+    <script src="app.js"></script>
+    <script src="services/services.js"></script>   
+    <script src="services/build_a_book.js"></script>   
+    <script src="services/my_books.js"></script>   
+  </body>
+</html>
