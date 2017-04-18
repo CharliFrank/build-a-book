@@ -45,7 +45,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('Client'));
 
 app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/Client/index.html`);
+  res.render(`${__dirname}/Client/views/signup.ejs`);
 });
 
 app.get('/signup', (req, res) => {
