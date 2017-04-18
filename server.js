@@ -45,18 +45,18 @@ app.set('view engine', 'ejs');
 app.use(express.static('Client'));
 
 app.get('/', (req, res) => {
+  res.redirect('#/login');
+});
+
+app.get('#/signup', (req, res) => {
   res.render(`${__dirname}/Client/views/signup.ejs`);
 });
 
-app.get('/signup', (req, res) => {
-  res.render(`${__dirname}/Client/views/signup.ejs`);
-});
-
-app.get('/login', (req, res) => {
+app.get('#/login', (req, res) => {
   res.render(`${__dirname}/Client/views/login.ejs`);
 });
 
-app.get('/build_a_book', (req, res) => {
+app.get('#/build_a_book', (req, res) => {
   res.render(`${__dirname}/Client/views/build_a_book.ejs`);
 });
 
@@ -65,7 +65,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/my_books', (req, res) => {
+app.get('#/my_books', (req, res) => {
   res.render(`${__dirname}/Client/views/my_books.ejs`);
 });
 
@@ -80,8 +80,7 @@ app.post('/signup', (req, res) => {
       console.error(err, 'Error');
     } else {
       console.log('saved to database');
-      console.log(res.body);
-      res.redirect('/');
+      res.redirect('/#/build_a_book');
     }
   });
 });
@@ -98,8 +97,27 @@ app.post('/login', (req, res) => {
       } else if (username === person[0].username && password === person[0].password) {
         res.redirect('/#/build_a_book');
       } else {
-        res.render(`${__dirname}/Client/views/login.ejs`);
+        res.redirect('/#/login');
       }
     });
   }
+});
+
+app.post('/add_a_page', (req, res) => {
+  console.log('inside /add_a_page post');
+  const username = req.body.username;
+  const password = req.body.password;
+  const page = req.body.page;
+
+  // const person = User({ username, password });
+
+  User.update({ username }, { $push: { pages: page } }, (err, data) => {
+    if (err) {
+      console.error(err, 'Error');
+    } else {
+      console.log(data, 'data');
+      res.redirect('/#/build_a_book');
+    }
+  });
+
 });
