@@ -19,7 +19,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Build A Book ##
   Build A Book
 
-## Sub-Heading ##
+## No More "Boring" Books ##
   This product is for children who don't like to read the same book because it gets boring.
 
 ## Summary ##
@@ -29,16 +29,16 @@ Once the project moves into development, the press release can be used as a touc
   My 7 year old doesn't like to read because she feels that reading the same book more than once is boring. 
 
 ## Solution ##
-  It would allow her to create her own stories while letting her practice her reading more. 
+  It would allow children to create her own stories while letting them practice her reading more. 
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  Make your own story.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  You start by creating a story.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  Imagination.
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  Tire of reading the same thing, go make your own!
