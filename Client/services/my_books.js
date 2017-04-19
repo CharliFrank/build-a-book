@@ -1,24 +1,39 @@
-angular.module('app.my_books', [])
+angular.module('app.my_books', [
+  'angularTurn',
+])
 
 .controller('MyBooksController', function ($scope, $window, $http) {
   console.log('inside my books app ctrl');
   $scope.message = 'Your controller is working! MyBooksController';
   $scope.myBook = [];
   $scope.showInput = false;
-
+  
   $scope.click = function (event) {
+
     console.log(event);
     var tempArr = [];
     $scope.myBooks.map(book => {
       if (book[0] === event) {
         console.log(book);
+        $scope.bookTitle = event;
         $scope.showInput = !$scope.showInput;
-        for (var key in book ){
+        for (let key in book) {
           if (Number(key)) {
             $scope.myBook.push(book[key]);
           }
         }
       }
+    });
+    setTimeout(function () {
+      $scope.book();
+    }, 0);
+  };
+
+  $scope.book = function () {
+    $("#flipbook").turn({
+      width: 400,
+      height: 300,
+      autoCenter: true,
     });
   };
 
@@ -47,6 +62,7 @@ angular.module('app.my_books', [])
     setTimeout(function () {
        $scope.getBooks();
     }, 500);
+
   };
 
   $scope.objMap = function (array) {

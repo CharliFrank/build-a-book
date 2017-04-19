@@ -1,0 +1,31 @@
+{
+  "name": "angular-turnjs",
+  "version": "1.0.3",
+  "description": "Angular wrapper for TurnJS",
+  "main": "dist/angular-turnjs.js",
+  "authors": [
+    "Embla Software Innovations"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "turnjs",
+    "angular"
+  ],
+  "homepage": "https://github.com/scne/Angular-TurnJS",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "88cfb63086e3760939a7ef73c50551c27a7c790b"
+  },
+  "_source": "https://github.com/scne/Angular-TurnJS.git",
+  "_target": "^1.0.3",
+  "_originalSource": "angular-turnjs"
+}
