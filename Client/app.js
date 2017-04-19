@@ -5,7 +5,6 @@ const app = angular.module('app', [
   'app.my_books',
   // 'ngAnimate',
   // 'textAngular',
-  'angularTurn',
   'ngRoute',
 ]);
 
