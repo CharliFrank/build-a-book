@@ -60,10 +60,10 @@ app.get('#/build_a_book', (req, res) => {
   res.render(`${__dirname}/Client/views/build_a_book.ejs`);
 });
 
-app.use((req, res, next) => {
-  console.log(req.body);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(req.body);
+//   next();
+// });
 
 app.get('#/my_books', (req, res) => {
   res.render(`${__dirname}/Client/views/my_books.ejs`);
@@ -106,18 +106,28 @@ app.post('/login', (req, res) => {
 app.post('/add_a_page', (req, res) => {
   console.log('inside /add_a_page post');
   const username = req.body.username;
-  const password = req.body.password;
-  const page = req.body.page;
+  const book = req.body.book;
 
-  // const person = User({ username, password });
-
-  User.update({ username }, { $push: { pages: page } }, (err, data) => {
+  User.update({ username }, { $push: { books: book } }, (err, data) => {
     if (err) {
       console.error(err, 'Error');
     } else {
-      console.log(data, 'data');
       res.redirect('/#/build_a_book');
     }
   });
+});
 
+app.get('/get_books', (req, res) => {
+  console.log('get to /get_books');
+  console.log(req.query);
+  const username = req.query.username;
+
+  User.find({ username }, 'username password books', (err, person) => {
+    if (err) {
+      console.error(err, 'ERROR')
+    } else {
+      console.log(person[0].books);
+      res.send(JSON.stringify(person[0].books));
+    }
+  });
 });
