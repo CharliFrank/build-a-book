@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-turnjs": "^1.0.4",
     "body-parser": "^1.17.1",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
