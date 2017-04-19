@@ -30,5 +30,38 @@ app.config(($routeProvider) => {
     });
 });
 
+app.directive('backImg', function(){
+     var linkFn;
+    linkFn = function(scope, element, attrs) {
+        var animateDown, animateRight, pageOne, pageTwo;
+        pageOne = angular.element(element.children()[0]);
+        pageTwo = angular.element(element.children()[1]);
 
+        animateDown = function() {
+            $(this).animate({
+                top: '+=50'
+            });
+        };
+
+        animateRight = function() {
+            $(this).animate({
+                left: '+=50'
+            });
+        };
+
+        $(pageOne).on('click', animateDown);
+        $(pageTwo).on('click', animateRight);
+    };
+    return {
+        restrict: 'E',
+        link: linkFn
+    };
+    // return function(scope, element, attrs){
+    //     var url = attrs.backImg;
+    //     element.css({
+    //         'background-image': 'url(' + url +')',
+    //         'background-size' : 'cover'
+    //     });
+    // };
+});
 

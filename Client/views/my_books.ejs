@@ -7,4 +7,22 @@
           <a href="#/login" ng-click="logout">Log Out</a> 
         </md-nav-bar>
       </div>
+
+      <div ng-init="init()">
+        <div>
+          <div data-ng-repeat="book in myBooks" >
+              <a ng-hide="showInput" ng-click="click(book[0])"> {{book[0]}} </a>
+          </div>
+        </div>
+      </div>
+      <div id="flipbook" ng-show="showInput">
+          <div class="hard"> Turn.js </div> 
+          <div class="hard"></div>
+          <div data-ng-repeat="book in myBook" >
+              {{book}} 
+          </div>
+          <div class="hard"></div>
+          <div class="hard"></div>
+      </div>
 </div>
+

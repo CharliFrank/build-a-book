@@ -9,9 +9,9 @@
       </div>
     <div ng-show="showInput">
       <input type='text' placeholder="Build Your Story Here" ng-model='narration.text' name="username" class="narration_input" />
-      <button class="narration_button" ng-click="savePage(narration.text)" >Save My Page</button>
+      <button class="narration_button" ng-click="savePage(narration.text)" value="Reset" >Save My Page</button>
     </div>
 
-    <a href="#" ng-click="showDetails = ! showDetails">Am I Hiding?</a>
-    <button ng-hide="showInput" ng-click="buttonClicked()">Save My Page</button>
+    <button ng-hide="showInput" ng-click="buttonClicked()">Create A New Book!</button>
+    <button ng-show="showInput" ng-click="sendBook()">Finish With My Book!</button>
 </div>

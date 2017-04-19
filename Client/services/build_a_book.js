@@ -1,17 +1,23 @@
 angular.module('app.build_a_book', [])
 
 .controller('BuildABookController', function ($window, $scope, $http) {
-  console.log('inside guild book app ctl');
-  console.log('inside guild book app ctl', $window.localStorage);
-
   $scope.showInput = false;
+  $scope.bookTitle = '';
+  $scope.book = [];
+  
   $scope.buttonClicked = function () {
-    console.log('getting clicked');
+    $scope.bookTitle = prompt('What Is The Title Of Your Book?');
     $scope.showInput = !$scope.showInput;
-  }
+    $scope.book.push($scope.bookTitle);
+  };
 
   $scope.savePage = function (text) {
-    console.log(text);
+    $scope.book.push(text);
+    console.log($scope.book);
+  };
+
+  $scope.sendBook = function () {
+    console.log('send book func');
     return $http({
       method: 'POST',
       url: '/add_a_page',
@@ -21,8 +27,8 @@ angular.module('app.build_a_book', [])
       data: {
         username: $window.localStorage.user,
         password: $window.localStorage.password,
-        page: text,
-      }
+        book: $scope.book,
+      },
     }).then(function successCallback(response) {
       console.log(response.data);
       return response;

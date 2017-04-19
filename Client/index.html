@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="app.css" />
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="flipbook.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
     <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
-    <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>-->
     <title>Build A Book</title>
   </head>
   <body>
@@ -19,7 +19,28 @@
           <h2>Build A Book</h2>
         </div>
       </nav>
-      
+
+      <div id="flipbook">
+        <div class="hard"> Turn.js </div> 
+        <div class="hard"></div>
+        <div> Page 1 </div>
+        <div> Page 2 </div>
+        <div> Page 3 </div>
+        <div> Page 4 </div>
+        <div class="hard"></div>
+        <div class="hard"></div>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+        $("#flipbook").turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+        });
+      });
+    </script>
+    
       <div>
         <div ng-view>
 
@@ -28,6 +49,7 @@
     <script src="app.js"></script>
     <script src="services/services.js"></script>   
     <script src="services/build_a_book.js"></script>   
-    <script src="services/my_books.js"></script>   
+    <script src="services/my_books.js"></script>  
+    
   </body>
 </html>
