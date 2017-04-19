@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
 
-  pages: { type: Array, default: [] },
+  books: { type: Array, default: [] },
 });
 
 const UserModel = mongoose.model('users', UserSchema);
