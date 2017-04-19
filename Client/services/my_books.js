@@ -1,6 +1,4 @@
-angular.module('app.my_books', [
-  'angularTurn',
-])
+angular.module('app.my_books', [])
 
 .controller('MyBooksController', function ($scope, $window, $http) {
   console.log('inside my books app ctrl');
