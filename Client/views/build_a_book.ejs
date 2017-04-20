@@ -8,9 +8,11 @@
       </div>
     <div ng-show="showInput">
       <input type='text' placeholder="Build Your Story Here" ng-model='narration.text' name="username" class="narration_input" />
-      <button class="narration_button" ng-click="savePage(narration.text)" value="Reset" >Save My Page</button>
+      <button class="narration_button" ng-click="savePage(narration.text)"  value="Reset" >Save My Page</button>
     </div>
 
     <button ng-hide="showInput" ng-click="buttonClicked()">Create A New Book!</button>
     <button ng-show="showInput" ng-click="sendBook()">Finish With My Book!</button>
+
+
 </div>

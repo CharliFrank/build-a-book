@@ -4,7 +4,11 @@ angular.module('app.build_a_book', [])
   $scope.showInput = false;
   $scope.bookTitle = '';
   $scope.book = [];
-  
+
+    $scope.clearSearch = function () {
+        $scope.narration.text = "";
+    };
+
   $scope.buttonClicked = function () {
     $scope.bookTitle = prompt('What Is The Title Of Your Book?');
     $scope.showInput = !$scope.showInput;
@@ -12,9 +16,10 @@ angular.module('app.build_a_book', [])
   };
 
   $scope.savePage = function (text) {
+    $scope.clearSearch();
     $scope.book.push(text);
     console.log($scope.book);
-  };
+    };
 
   $scope.sendBook = function () {
     console.log('send book func');

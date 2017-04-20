@@ -3,7 +3,9 @@
   bottom: 100px;
   left: 30px;
   height: 50px;
-  width: 850px;
+  width: 630px;
+  border-radius: 25px;
+  
 }
 .narration_button {
   position: absolute;
@@ -69,7 +71,10 @@ body{
     overflow: auto;
     width:400px;
 }
+.page{
 
+    overflow-wrap: break-word;
+}
 #flipbook .page{
     width:400px;
     height:300px;
@@ -78,7 +83,6 @@ body{
     font-size:15px;
     text-align:center;
 
-    /*overflow-wrap: break-word;*/
 }
 
 #flipbook .page-wrapper{
@@ -105,11 +109,6 @@ body{
 #flipbook .odd{
     background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
     background-image: url('images/storybook_background.png');
-    /*background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);*/
     -webkit-box-shadow:inset 0 0 5px purple;
     -moz-box-shadow:inset 0 0 5px purple;
     -o-box-shadow:inset 0 0 5px purple;
@@ -121,11 +120,6 @@ body{
 #flipbook .even{
     background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
     background-image: url('images/storybook_background.png');
-    /*background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
-    background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
-    background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
-    background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
-    background-image:linear-gradient(left, #fff 95%, #dadada 100%);*/
     -webkit-box-shadow:inset 0 0 5px purple;
     -moz-box-shadow:inset 0 0 5px purple;
     -o-box-shadow:inset 0 0 5px purple;
