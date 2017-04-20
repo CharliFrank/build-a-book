@@ -19,7 +19,7 @@ angular.module('app.build_a_book', [])
     $scope.clearSearch();
     $scope.book.push(text);
     console.log($scope.book);
-    };
+  };
 
   $scope.sendBook = function () {
     console.log('send book func');
