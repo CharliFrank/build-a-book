@@ -5,14 +5,36 @@ angular.module('app.my_books', [])
   $scope.message = 'Your controller is working! MyBooksController';
   $scope.myBook = [];
   $scope.showInput = false;
-  
-  $scope.click = function (event) {
 
+  $scope.showBooks = function () {
+    $scope.showInput = !$scope.showInput;
+    $window.location.reload();
+  };
+
+  $scope.deleteABook = function () {
+      $http({
+        method: 'DELETE',
+        url: '/delete_a_book',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        params: {
+          username: $window.localStorage.user,
+          book: $scope.bookTitle,
+        },
+      })
+      .then(function(response) {
+       console.log(response.data);
+      }, function(rejection) {
+        console.log(rejection.data);
+      });
+  };
+
+  $scope.click = function (event) {
     console.log(event);
     var tempArr = [];
     $scope.myBooks.map(book => {
       if (book[0] === event) {
-        console.log(book);
         $scope.bookTitle = event;
         $scope.showInput = !$scope.showInput;
         for (let key in book) {

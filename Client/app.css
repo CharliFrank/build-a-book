@@ -1,13 +1,3 @@
-.box {
-    position: relative;
-    background-color: #abc;
-    width: 40px;
-    height: 40px;
-    float: left;
-    margin: 5px;
-    cursor:pointer
-}
-
 .narration_input {
   position: absolute;
   bottom: 100px;
@@ -30,16 +20,31 @@ div[back-img]{
 #container {
   height: 400px;
   background-repeat: no-repeat;
+   margin: auto;
+    width: 50%;
+    padding: 25px;
 }
 
 body{
+    background-image: url('images/app_background.jpeg');
     overflow:hidden;
+    font-family: 'Architects Daughter', cursive;
+    font-style: italic;    
+    margin: 0 auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
 
 #flipbook{
     font-family: 'Architects Daughter', cursive;
     width:400px;
     height:300px;
+}
+#flipbook .page {
+    overflow: auto;
+    width:400px;
 }
 
 #flipbook .page{

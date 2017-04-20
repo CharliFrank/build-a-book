@@ -1,5 +1,4 @@
 <div id="container">
-    {{ message }}
     <div class="navigation" >
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
           <a href="#/my_books" ng-click="my-books">My Books</a> 
@@ -8,7 +7,9 @@
         </md-nav-bar>
       </div>
 
+      <button ng-show="showInput" href="#/my_books" ng-click="deleteABook()">delete this book</button>
       <div ng-init="init()">
+        
         <div>
           <div data-ng-repeat="book in myBooks" >
               <a ng-hide="showInput" ng-click="click(book[0])"> {{book[0]}} </a>
@@ -18,10 +19,11 @@
       <div id="flipbook" ng-show="showInput">
           <div class="hard"> {{ bookTitle }} </div> 
           <div class="hard"></div>
-          <div data-ng-repeat="page in myBook" >
+          <div data-ng-repeat="page in myBook" class="page">
               {{page}} 
           </div>
           <div class="hard"></div>
           <div class="hard"></div>
       </div>
+      <button ng-show="showInput" href="#/my_books" ng-click="showBooks()">back to my books...</button>
 </div>
