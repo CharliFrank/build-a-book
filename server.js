@@ -45,7 +45,9 @@ app.set('view engine', 'ejs');
 app.use(express.static('Client'));
 
 app.get('/', (req, res) => {
-  res.redirect('#/login');
+  // res.redirect('#/login');
+  res.render(`${__dirname}/Client/views/signup.ejs`);
+  
 });
 
 app.get('#/signup', (req, res) => {
@@ -128,6 +130,37 @@ app.get('/get_books', (req, res) => {
     } else {
       console.log(person[0].books);
       res.send(JSON.stringify(person[0].books));
+    }
+  });
+});
+
+app.delete('/delete_a_book', (req, res) => {
+  console.log('hitting delete');
+  console.log(req.query);
+  const username = req.query.username;
+  let newBooks = [];
+  
+  User.find({ username }, 'username password books', (err, person) => {
+    if (err) {
+      console.error(err, 'ERROR')
+    } else {
+      console.log(person[0]);
+      // res.send(JSON.stringify(person[0].books));
+      person[0].books.forEach( book => {
+        console.log(book);
+        if (book[0] !== req.query.book) {
+          newBooks.push(book);
+        }
+      }, this);
+      console.log(newBooks, 'newbooks');
+      User.update({ username }, { books: newBooks }, (err, data) => {
+        if (err) {
+          console.error(err, 'Error');
+        } else {
+          console.log(data, 'data');
+          res.redirect('/#/my_books');
+        }
+      });
     }
   });
 });
