@@ -12,11 +12,7 @@
   height: 50px;
   width: 100px
 }
-div[back-img]{
-    width: 100px;
-    height: 100px;
-    color: #fff;
-}
+
 #container {
   height: 400px;
   background-repeat: no-repeat;
@@ -25,8 +21,34 @@ div[back-img]{
     padding: 25px;
 }
 
+a {
+    cursor: pointer;
+}
+h1 {
+  color: purple;
+}
+button {
+  margin: auto;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: lightsalmon;
+}
+
+button:hover {
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+a {
+    color: hotpink;
+}
+
+a:hover {
+    color: pink;
+}
+
 body{
-    background-image: url('images/app_background.jpeg');
+    background-image: url('images/background.jpeg');
     overflow:hidden;
     font-family: 'Architects Daughter', cursive;
     font-style: italic;    
@@ -35,6 +57,7 @@ body{
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    background-size: cover; 
 }
 
 #flipbook{
@@ -52,8 +75,10 @@ body{
     height:300px;
     background-color:white;
     line-height:300px;
-    font-size:20px;
+    font-size:15px;
     text-align:center;
+
+    /*overflow-wrap: break-word;*/
 }
 
 #flipbook .page-wrapper{
@@ -65,14 +90,16 @@ body{
 }
 
 #flipbook .hard{
-    background:#ccc !important;
+    background:thistle !important;
     color:#333;
-    -webkit-box-shadow:inset 0 0 5px #666;
-    -moz-box-shadow:inset 0 0 5px #666;
-    -o-box-shadow:inset 0 0 5px #666;
-    -ms-box-shadow:inset 0 0 5px #666;
-    box-shadow:inset 0 0 5px #666;
+    -webkit-box-shadow:inset 0 0 5px purple;
+    -moz-box-shadow:inset 0 0 5px purple;
+    -o-box-shadow:inset 0 0 5px purple;
+    -ms-box-shadow:inset 0 0 5px purple;
+    box-shadow:inset 0 0 5px purple;
     font-weight:bold;
+    font-size:20px;
+    color: purple;   
 }
 
 #flipbook .odd{
@@ -82,12 +109,12 @@ body{
     background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
     background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
     background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
-    -webkit-box-shadow:inset 0 0 5px #666;*/
-    -moz-box-shadow:inset 0 0 5px #666;
-    -o-box-shadow:inset 0 0 5px #666;
-    -ms-box-shadow:inset 0 0 5px #666;
-    box-shadow:inset 0 0 5px #666;
+    background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);*/
+    -webkit-box-shadow:inset 0 0 5px purple;
+    -moz-box-shadow:inset 0 0 5px purple;
+    -o-box-shadow:inset 0 0 5px purple;
+    -ms-box-shadow:inset 0 0 5px purple;
+    box-shadow:inset 0 0 5px purple;
     
 }
 
@@ -99,9 +126,9 @@ body{
     background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
     background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
     background-image:linear-gradient(left, #fff 95%, #dadada 100%);*/
-    -webkit-box-shadow:inset 0 0 5px #666;
-    -moz-box-shadow:inset 0 0 5px #666;
-    -o-box-shadow:inset 0 0 5px #666;
-    -ms-box-shadow:inset 0 0 5px #666;
-    box-shadow:inset 0 0 5px #666;
+    -webkit-box-shadow:inset 0 0 5px purple;
+    -moz-box-shadow:inset 0 0 5px purple;
+    -o-box-shadow:inset 0 0 5px purple;
+    -ms-box-shadow:inset 0 0 5px purple;
+    box-shadow:inset 0 0 5px purple;
 }
