@@ -18,7 +18,6 @@ angular.module('app.build_a_book', [])
   $scope.savePage = function (text) {
     $scope.clearSearch();
     $scope.book.push(text);
-    console.log($scope.book);
   };
 
   $scope.sendBook = function () {
