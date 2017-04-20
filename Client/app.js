@@ -3,7 +3,6 @@ const app = angular.module('app', [
   'app.services',
   'app.build_a_book',
   'app.my_books',
-  // 'ngAnimate',
   'ngRoute',
 ]);
 
