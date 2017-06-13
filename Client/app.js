@@ -25,7 +25,7 @@ app.config(($routeProvider) => {
       controller: 'BuildABookController',
     })
     .otherwise({
-      redirectTo: '/#/build_a_book',
+      redirectTo: '/signup',
     });
 });
 
