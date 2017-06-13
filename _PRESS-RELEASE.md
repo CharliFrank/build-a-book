@@ -25,7 +25,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Summary ##
   Allows the user to create their own story while letting them learn sight words and how to read better.
 
-## Problem ##
+## A Problem ##
   My 7 year old doesn't like to read because she feels that reading the same book more than once is boring. 
 
 ## Solution ##

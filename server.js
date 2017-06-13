@@ -46,8 +46,7 @@ app.use(express.static('Client'));
 
 app.get('/', (req, res) => {
   // res.redirect('#/login');
-  res.render(`${__dirname}/Client/views/signup.ejs`);
-  
+  res.render(`${__dirname}/Client/views/signup.ejs`); 
 });
 
 app.get('#/signup', (req, res) => {
@@ -126,7 +125,7 @@ app.get('/get_books', (req, res) => {
 
   User.find({ username }, 'username password books', (err, person) => {
     if (err) {
-      console.error(err, 'ERROR')
+      console.error(err, 'ERROR');
     } else {
       console.log(person[0].books);
       res.send(JSON.stringify(person[0].books));

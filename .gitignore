@@ -28,6 +28,7 @@ dist/
 node_modules/
 bower_components/
 .env
+.DS_Store
 
 # Floobits
 .floo
