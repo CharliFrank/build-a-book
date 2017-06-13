@@ -25,17 +25,6 @@ grunt.initConfig({
       command: 'npm start',
     },
   },
-  uglify: {
-    my_target: {
-      options: {
-        sourceMap: true,
-        sourceMapName: 'path/to/sourcemap.map',
-      },
-      files: {
-        'dest/output.min.js': ['src/input.js'],
-      },
-    },
-  },
   eslint: {
     options: {
       ignorePattern: 'src/client/bower_components/**/*.js',
@@ -59,4 +48,10 @@ grunt.registerTask('dev', [
   'eslint',
   'babel',
   'shell:devServer',
+]);
+grunt.registerTask('prod', [
+  'clean',
+  'eslint',
+  'babel',
+  'shell:prodServer',
 ]);
