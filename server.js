@@ -74,6 +74,7 @@ app.post('/signup', (req, res) => {
   person.save((err) => {
     if (err) {
       console.error(err, 'Error');
+      res.redirect('/#/signup');
     } else {
       res.redirect('/#/build_a_book');
     }
@@ -81,18 +82,31 @@ app.post('/signup', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
+  console.log('/login');
+
   const username = req.body.username;
   const password = req.body.password;
 
   if (username !== undefined && password !== undefined) {
-    User.find({ username }, 'username password', (err, person) => {
-      if (err) {
-        console.error(err, 'Error');
-      } else if (username === person[0].username && password === person[0].password) {
-        res.redirect('/#/build_a_book');
+    User.find({ username })
+    .then((data) => {
+      if (data.length) {
+        User.find({ username }, 'username password', (err, person) => {
+          if (err) {
+            console.error(err, 'Error');
+            res.redirect('/#/signup');
+          } else if (username === person[0].username && password === person[0].password) {
+            res.redirect('/#/build_a_book');
+          } else {
+            res.redirect('/#/login');
+          }
+        });
       } else {
-        res.redirect('/#/login');
+        res.redirect('/#/signup');
       }
+    })
+    .catch((error) => {
+      console.error(error);
     });
   }
 });
