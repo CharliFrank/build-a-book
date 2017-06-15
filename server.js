@@ -57,11 +57,6 @@ app.get('#/build_a_book', (req, res) => {
   res.render(`${__dirname}/Client/views/build_a_book.ejs`);
 });
 
-// app.use((req, res, next) => {
-//   console.log(req.body);
-//   next();
-// });
-
 app.get('#/my_books', (req, res) => {
   res.render(`${__dirname}/Client/views/my_books.ejs`);
 });
