@@ -10,16 +10,19 @@ const mongoose = require('mongoose');
 const User = require('./server/users/userModel.js');
 
 const port = process.env.PORT || 3000;
-const user = process.env.USERNAME;
-const pword = process.env.PASSWORD;
+// const user = process.env.USERNAME;
+// const pword = process.env.PASSWORD;
+const db = process.env.MONGODB;
 
-const options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
-  replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } } };
+// const options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } },
+// replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } } };
 const app = express();
 const conn = mongoose.connection;
 
 
-mongoose.connect(`mongodb://${user}:${pword}@ds161950.mlab.com:61950/build-a-book-db`, options);
+// mongoose.connect(`mongodb://${user}:${pword}@ds161950.mlab.com:61950/build-a-book-db`, options);
+
+mongoose.connect(db);
 
 conn.on('error', console.error.bind(console, 'connection error:'));
 

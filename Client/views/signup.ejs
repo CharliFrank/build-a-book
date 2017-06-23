@@ -1,10 +1,9 @@
-<div>
-  <h2>signup</h2>
-  <form action="/signup" method="POST">
+<div id='signup' ng-controller="AuthController as c">
+  <h2>Signup</h2>
+  <form name="signupForm" ng-submit='c.signup()'>
     <input type='text'  placeholder="username" ng-model='user.username' name="username">
     <input type="password"  placeholder="password" ng-model='user.password' name="password">
-    <button ng-click="usernameInfo(user.username, user.password)" >signup</button>
+    <button>signup</button>
   </form>
     <a href="#/login">Already have an account? <strong>Login</strong> ...</a>
-
 </div>

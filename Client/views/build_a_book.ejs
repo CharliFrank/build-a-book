@@ -1,16 +1,26 @@
-<div id="container">
+<div id="container" ng-controller="BuildABookController as c">
       <div class="navigation" >
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-          <a href="#/my_books" ng-click="my-books">My Books</a> 
-          <a href="#/build_a_book" ng-click="build-a-book">Build A Book!</a> 
-          <a href="#/login" ng-click="logout">Log Out</a> 
+          <a ng-click="c.myBooksPage()">My Books</a> 
+          <a ng-click="c.buildBooksPage()">Build A Book!</a> 
+          <a ng-click="c.logout()">Log Out</a> 
         </md-nav-bar>
       </div>
-    <div ng-show="showInput">
-      <input type='text' placeholder="Build Your Story Here" ng-model='narration.text' name="username" class="narration_input" />
-      <button class="narration_button" ng-click="savePage(narration.text)"  value="Reset" >Save My Page</button>
+    <button ng-hide="c.showInput" ng-click="c.create()">Create A New Book!</button>
+    <button ng-show="c.showInput" ng-click="c.addToMyBooks()">Done!</button>
+     <div ng-show="c.showInput" ng-if="!c.title">
+      <h3>Title Please!</h3>
+      <input ng-model="book.title"/>
+      <button ng-click="c.enterTitle(book.title)">Save Title</button>
+     </div>
+    <div ng-show="c.title">
+      <h3>{{ c.title }}</h3>
     </div>
-
-    <button ng-hide="showInput" ng-click="buttonClicked()">Create A New Book!</button>
-    <button ng-show="showInput" ng-click="sendBook()">Finish With My Book!</button>
+    <div data-ng-repeat="page in c.myBook" ng-if="c.myBook.length > 0">
+      {{ page }}
+    </div>
+    <div ng-show="c.showInput">
+      <input type='text' placeholder="Build Your Story Here" ng-model='c.narration.text' name="username" class="narration_input" />
+      <button class="narration_button" ng-click="c.savePage(c.narration.text)"  value="Reset" >Create Page</button>
+    </div>  
 </div>

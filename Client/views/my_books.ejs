@@ -1,29 +1,29 @@
-<div id="container">
+<div id="container" ng-controller="MyBooksController as c" ng-init="c.getMyBooks()">
     <div class="navigation" >
         <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-          <a href="#/my_books" ng-click="my-books">My Books</a> 
-          <a href="#/build_a_book" ng-click="build-a-book">Build A Book!</a> 
-          <a href="#/login" ng-click="logout">Log Out</a> 
+          <a ng-click="c.myBooksPage()">My Books</a> 
+          <a ng-click="c.buildBooksPage()">Build A Book!</a> 
+          <a ng-click="c.logout()">Log Out</a> 
         </md-nav-bar>
       </div>
 
-      <button ng-show="showInput" href="#/my_books" ng-click="deleteABook()">delete this book</button>
-      <div ng-init="init()">
-        
+      <div ng-init="c.getMyBooks()">
         <div>
-          <div data-ng-repeat="book in myBooks" >
-              <a ng-hide="showInput" ng-click="click(book[0])"> {{book[0]}} </a>
+          <div ng-repeat="book in c.myBooks" >
+              <a ng-hide="c.showInput" ng-click="c.showBook(book[0])"> {{book[0]}}</a>
           </div>
         </div>
       </div>
-      <div id="flipbook" ng-show="showInput">
-          <div class="hard"> {{ bookTitle }} </div> 
+
+      <button ng-show="c.showInput" ng-click="c.showBooks()">Back To My Books</button>
+      <div id="flipbook" ng-show="c.showInput">
+          <div class="hard"> {{ c.bookTitle }} </div> 
           <div class="hard"></div>
-          <span data-ng-repeat="page in myBook" id="page" class="page">
+          <span data-ng-repeat="page in c.reading" id="page" class="page">
               {{ page }}
           </span>
           <div class="hard"></div>
           <div class="hard"></div>
       </div>
-      <button ng-show="showInput" href="#/my_books" ng-click="showBooks()">back to my books...</button>
+      <button ng-show="c.showInput" ng-click="c.deleteBook()">Delete</button>
 </div>
