@@ -1,16 +1,27 @@
 .narration_input {
-  position: absolute;
-  bottom: 100px;
-  left: 30px;
+  position: relative;
+  bottom: 0px;
   height: 50px;
-  width: 630px;
+  width: 350px;
   border-radius: 25px;
   
 }
+.navigation {
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+}
+
+.titlebar {
+  padding: 0px 10px 10px 10px;
+  color: purple;
+}
+
+.row, .title {
+  color: purple
+}
 .narration_button {
-  position: absolute;
-  bottom: 100px;
-  right: 30px;
+  position: relative;
+  bottom: 0px;
   height: 50px;
   width: 100px
 }
@@ -43,6 +54,7 @@ button:hover {
 
 a {
     color: hotpink;
+    padding: 10px 10px 10px 10px;
 }
 
 a:hover {
@@ -78,7 +90,6 @@ body{
 #flipbook .page{
     width:400px;
     height:300px;
-    background-color:white;
     line-height:300px;
     font-size:15px;
     text-align:center;
@@ -94,7 +105,6 @@ body{
 }
 
 #flipbook .hard{
-    background:thistle !important;
     color:#333;
     -webkit-box-shadow:inset 0 0 5px purple;
     -moz-box-shadow:inset 0 0 5px purple;
@@ -102,27 +112,30 @@ body{
     -ms-box-shadow:inset 0 0 5px purple;
     box-shadow:inset 0 0 5px purple;
     font-weight:bold;
-    font-size:20px;
-    color: purple;   
+    font-size:25px;
+    color: hotpink;   
 }
 
 #flipbook .odd{
     background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
-    background-image: url('images/storybook_background.png');
     -webkit-box-shadow:inset 0 0 5px purple;
     -moz-box-shadow:inset 0 0 5px purple;
     -o-box-shadow:inset 0 0 5px purple;
     -ms-box-shadow:inset 0 0 5px purple;
     box-shadow:inset 0 0 5px purple;
-    
+    color: hotpink;       
 }
 
 #flipbook .even{
     background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
-    background-image: url('images/storybook_background.png');
     -webkit-box-shadow:inset 0 0 5px purple;
     -moz-box-shadow:inset 0 0 5px purple;
     -o-box-shadow:inset 0 0 5px purple;
     -ms-box-shadow:inset 0 0 5px purple;
     box-shadow:inset 0 0 5px purple;
+    color: hotpink;   
+}
+
+.choices, .image_view {
+    padding: 5px 5px 5px 5px;
 }

@@ -8,19 +8,29 @@
       </div>
     <button ng-hide="c.showInput" ng-click="c.create()">Create A New Book!</button>
     <button ng-show="c.showInput" ng-click="c.addToMyBooks()">Done!</button>
-     <div ng-show="c.showInput" ng-if="!c.title">
+     <div ng-show="c.showInput" ng-if="!c.title" class="titlebar">
       <h3>Title Please!</h3>
-      <input ng-model="book.title"/>
-      <button ng-click="c.enterTitle(book.title)">Save Title</button>
+      <input ng-model="book.title" class="narration_input"/>
+      <button ng-click="c.enterTitle(book.title)" class="narration_button">Save Title</button>
      </div>
     <div ng-show="c.title">
-      <h3>{{ c.title }}</h3>
+      <h3 class="title">{{ c.title }}</h3>
     </div>
-    <div data-ng-repeat="page in c.myBook" ng-if="c.myBook.length > 0">
-      {{ page }}
-    </div>
-    <div ng-show="c.showInput">
-      <input type='text' placeholder="Build Your Story Here" ng-model='c.narration.text' name="username" class="narration_input" />
-      <button class="narration_button" ng-click="c.savePage(c.narration.text)"  value="Reset" >Create Page</button>
-    </div>  
+    
+    <div class="row" ng-show="c.showInput">
+      <div class="col-lg-12 col-lg-9">
+      <div data-ng-repeat="page in c.myBook" ng-if="c.myBook.length > 0">
+        <h3>{{ page }}</h3>
+      </div>
+        <input type='text' placeholder="Build Your Story Here" ng-model='c.narration.text' name="username" class="narration_input" />
+        <button class="narration_button" ng-click="c.savePage(c.narration.text)"  value="Reset" >Create Page</button>
+      </div>
+      <div class="col-lg-12 col-lg-3" >
+        <span color="hotpink"><h5>Try Out A Background!</h5></span>
+        <div class="image_view"><img src="{{c.pic}}" width="200" height="200" /></div>
+        <div data-ng-repeat="choice in c.pageBackgroundChoices; track by $index" class="choices">
+          <a ng-click="c.changePhoto($index)">{{ choice }}</a>
+        </div>
+      </div>
+  </div>
 </div>

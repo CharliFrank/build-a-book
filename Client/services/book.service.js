@@ -31,7 +31,6 @@ angular.module('book.service', [])
       return ((array, res = []) => {
         let obj = {};
         array.forEach((arr) => {
-          console.log(arr, 'arr')
           arr.forEach((page, index) => {
             obj[index] = page;
             if (index === arr.length - 1) {
@@ -40,7 +39,6 @@ angular.module('book.service', [])
             }
           });
         });
-        console.log(res, 'res');
         this.books = res;
         return res;
       })(response.data);
@@ -49,8 +47,7 @@ angular.module('book.service', [])
     });
   };
 
-  const addBook = () => {
-    console.log('send book func');
+  const addBook = (images) => {
     $http({
       method: 'POST',
       url: '/add_a_book',
@@ -59,14 +56,13 @@ angular.module('book.service', [])
         'x-access-token': $window.localStorage.getItem('book.token'),
       },
       data: {
-        book: this.currentBook,
+        book: this.currentBook.concat([images]),
       },
     })
       .then(response => response, error => error);
   };
 
   const deleteBook = (title) => {
-    console.log('delet request');
     $http({
       method: 'DELETE',
       url: '/delete_a_book',
@@ -79,13 +75,6 @@ angular.module('book.service', [])
       },
     })
       .then(response => response, error => error);
-      // .then((response) => {
-      //   console.log(response.data);
-      //   return true;
-      // }, (rejection) => {
-      //   console.log(rejection.data);
-      //   return false;
-      // });
   };
 
   return {

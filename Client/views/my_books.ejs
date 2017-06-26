@@ -17,13 +17,17 @@
 
       <button ng-show="c.showInput" ng-click="c.showBooks()">Back To My Books</button>
       <div id="flipbook" ng-show="c.showInput">
-          <div class="hard"> {{ c.bookTitle }} </div> 
+          <div class="hard" style="background-image: url('{{c.background}}'); background-size: cover; word-wrap: break-word"> 
+              {{ c.bookTitle }}
+         </div> 
           <div class="hard"></div>
-          <span data-ng-repeat="page in c.reading" id="page" class="page">
-              {{ page }}
-          </span>
+          <div data-ng-repeat="page in c.reading; track by $index" id="page" class="page" >
+            <div style="background-image: url('{{c.pageBackgrounds[0][$index]}}'); background-size: cover; word-wrap: break-word">
+                {{ page }}
+            </div>
+          </div>
           <div class="hard"></div>
-          <div class="hard"></div>
+          <div class="hard" style="background-image: url('{{c.background}}'); background-size: cover;"></div>
       </div>
       <button ng-show="c.showInput" ng-click="c.deleteBook()">Delete</button>
 </div>
